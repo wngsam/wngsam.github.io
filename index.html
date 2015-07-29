@@ -8,9 +8,17 @@
 		<link href="css/main.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
-		<a class="phi" href="datastructures.html">Data Structures</a>
+		<a class="phi" id="slide" href="datastructures.html">Data Structures</a>
 	
+		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		
+		<script type="text/javascript">
+		$(document).ready(function(){
+			$("#slide").hide();
+			$("#slide").slideDown('slow');
+		});
+		</script>
 	</body>
 </html>
