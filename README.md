@@ -1,1 +1,0 @@
-# wngsam.github.io
