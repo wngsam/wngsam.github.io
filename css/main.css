@@ -1,3 +1,7 @@
-.phi {
+body { padding-top: 70px; }
+.welcome {
 	font-family: 'Philosopher', sans-serif;
+	text-align: center;
+	font-size: 7em;
+	color: #80CCFF;
 }

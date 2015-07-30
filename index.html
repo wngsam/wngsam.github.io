@@ -4,16 +4,15 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
+		<!-- Sam W. 2015 -->
 		<link rel="icon" href="img/favicon.ico">
-		<title>Home Page</title>
+		<title>Sam's Whiteboard</title>
 		
 		<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
 		<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
 		<link href="css/main.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
-		<p class="phi" >Philosopher Font</p>
 		
 		<nav class="navbar navbar-inverse navbar-fixed-top">
 		  <div class="container">
@@ -24,21 +23,71 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			  </button>
-			  <a class="navbar-brand" href="index.html">Sam's Whiteboard</a>
+			  <a id="home" class="navbar-brand" href="#index">Sam's Whiteboard</a>
 			</div>
 			
 			<div id="navbar" class="collapse navbar-collapse">
 			  <ul class="nav navbar-nav navbar-right">
-				<li><a href="#about">About</a></li>
-				<li><a href="#contact">Contact</a></li>
+				<li id="about"><a href="#about">About</a></li>
+				<li id="contact"><a href="#contact">Contact</a></li>
 			  </ul>
 			</div>
 			
 		  </div>
 		</nav>
 		
+		<div class="container">
+			<p class="welcome" id="greeting">Welcome!</p>
+		</div>
+		
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
-		<script type="text/javascript"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+			
+				var welcome = $("#greeting");
+				welcome.hide();
+				welcome.fadeIn('slow');
+				welcome.click(function(){
+				
+					var color = '';
+					var rand = Math.floor((Math.random() * 3) + 1);
+					switch(rand){
+					case 1:
+						color+='#99D6FF';
+						break;
+					case 2:
+						color+='#B2E0FF';
+						break;
+					case 3:
+						color+='#66C2FF';
+						break;
+					}
+					$(this).css("color",color);
+				});
+				
+				$("#contact").click(function(){
+					$(this).addClass("active");
+					$("#about").removeClass("active");
+					$("#greeting").css("font-size","3em");
+					$("#greeting").html("Call me ;)");
+				});
+				
+				$("#about").click(function(){
+					$(this).addClass("active");
+					$("#contact").removeClass("active");
+					$("#greeting").css("font-size","3em");
+					$("#greeting").html("My name is... SAM!");
+				});
+				
+				$("#home").click(function(){
+					$("#about").removeClass("active");
+					$("#contact").removeClass("active");
+					$("#greeting").css("font-size","7em");
+					$("#greeting").html("Welcome!");
+				});
+				
+			});
+		</script>
 	</body>
 </html>
