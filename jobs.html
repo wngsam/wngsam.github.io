@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Sam W. 2015 -->
+		<link rel="icon" href="img/favicon.ico">
+		<title>Sam's Whiteboard</title>
+		
+		<link href='http://fonts.googleapis.com/css?family=Philosopher' rel='stylesheet' type='text/css'>
+		<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+		<link href="css/main.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div id="content"></div>
+	
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			function myFunction(data){
+				
+				var info = "";
+				
+				for(var i=0;i<data.results.length;i++){
+					info+=data.results[i].jobtitle+"<br>";
+					info+=data.results[i].company+"<br>";
+					info+=data.results[i].formattedLocation+"<br>";
+					info+=data.results[i].formattedRelativeTime+"<br>";
+					info+=data.results[i].snippet+"<br>";
+					info+=data.results[i].source+"<br>";
+					info+="<a href='"+data.results[i].url+"'>Apply</a><br>";
+					info+="<br>"
+				}
+			
+				$('#content').html(info);
+			};
+		</script>
+		<script src="http://api.indeed.com/ads/apisearch?publisher=922281543268654&q=java&l=new_york%2C+ny&fromage=7&latlong=1&co=us&userip=1.2.3.4&useragent=Mozilla/%2F4.0(Firefox)&v=2&format=json&callback=myFunction"></script>
+		
+	</body>
+</html>
