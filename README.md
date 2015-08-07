@@ -1,3 +1,3 @@
-Visit https://wngsam.github.io
+Visit https://wngsam.github.io (click around)
 
 Personal page. Nothign to see...
